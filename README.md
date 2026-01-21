@@ -19,6 +19,34 @@ As a General Ledger Accountant and Financial Analyst with 5 years of experience,
 
 ---
 
+## 📸 Screenshots
+
+### Invoice Management
+![Edit Invoice](docs/452059418-583f83eb-dda5-4174-a0a9-47fc145b4ea3.png)
+
+### Connected Accounts & Banking
+![Connected Accounts](docs/452059416-86ffabb2-bb8c-4657-b473-d5c7ecdeef8b.png)
+
+### Transaction Overview
+![Transactions](docs/452059415-b20a8114-8c1c-4305-b673-23c9e2aff2a4.png)
+
+### Invoices List
+![Invoices](docs/452059414-9f604eb3-e548-40ba-8989-25c9c8bae4e4.png)
+
+### IFRS Balance Sheet
+![Balance Sheet](docs/452059411-169e35db-db04-4d32-87ce-da67db2d04ac.png)
+
+### Trial Balance Report
+![Trial Balance](docs/452059409-883892f9-2147-4bc1-bcc1-6f2cae1af432.png)
+
+### Account Transactions
+![Account Transactions](docs/452059405-7801580f-4481-402d-8c57-e64ba2817f92.png)
+
+### Account Balances
+![Account Balances](docs/452059402-b9f66e86-0981-43d8-8b73-c148c77cb263.png)
+
+---
+
 ## 🇳🇱 Netherlands-Specific Features
 
 ### Professional Localization
