@@ -1,278 +1,94 @@
-# ERPSAAS
+# NL-FinancePro - Advanced Accounting Portfolio (Netherlands & IFRS Focused)
 
-<a href="https://trendshift.io/repositories/4749" target="_blank"><img src="https://trendshift.io/api/badge/repositories/4749" alt="andrewdwallo%2Ferpsaas | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[Repository: hrahm/nl-financepro](https://github.com/hrahm/nl-financepro)
 
-![Screenshot 2025-06-05 at 16-26-36 Edit Invoice - ERPSAAS](https://github.com/user-attachments/assets/583f83eb-dda5-4174-a0a9-47fc145b4ea3)
-![Screenshot 2025-06-05 at 16-29-47 Connected Accounts - ERPSAAS](https://github.com/user-attachments/assets/86ffabb2-bb8c-4657-b473-d5c7ecdeef8b)
-![Screenshot 2025-06-05 at 16-33-00 Transactions - ERPSAAS](https://github.com/user-attachments/assets/b20a8114-8c1c-4305-b673-23c9e2aff2a4)
-![Screenshot 2025-06-05 at 16-33-31 Invoices - ERPSAAS](https://github.com/user-attachments/assets/9f604eb3-e548-40ba-8989-25c9c8bae4e4)
-![Screenshot 2025-06-05 at 16-34-05 Balance Sheet - ERPSAAS](https://github.com/user-attachments/assets/169e35db-db04-4d32-87ce-da67db2d04ac)
-![Screenshot 2025-06-05 at 16-34-35 Trial Balance - ERPSAAS](https://github.com/user-attachments/assets/883892f9-2147-4bc1-bcc1-6f2cae1af432)
-![Screenshot 2025-06-05 at 16-35-03 Account Transactions - ERPSAAS](https://github.com/user-attachments/assets/7801580f-4481-402d-8c57-e64ba2817f92)
-![Screenshot 2025-06-05 at 16-35-21 Account Balances - ERPSAAS](https://github.com/user-attachments/assets/b9f66e86-0981-43d8-8b73-c148c77cb263)
+## Project Overview
 
+This project is a customized version of the [ERPSaaS](https://github.com/andrewdwallo/erpsaas) platform, specifically enhanced to demonstrate technical proficiency in **Laravel/PHP** development combined with deep **domain expertise in General Ledger Accounting and Financial Analysis** within the Netherlands market.
 
+As a General Ledger Accountant and Financial Analyst with 5 years of experience, I have adapted this platform to meet **IFRS (International Financial Reporting Standards)** and Dutch-specific regulatory requirements (BTW/Taxation).
 
+### 🚀 Key Portfolio Highlights
 
-A Laravel and Filament-powered accounting platform featuring full double-entry accrual accounting, delivering modern automation for professional financial management.
+*   **IFRS Component**: Re-engineered the financial statement engine to support IFRS-compliant reporting (Current vs. Non-current classification).
+*   **Netherlands Localization**: Integrated full Dutch language support with professional accounting terminology and local fiscal standards.
+*   **Fiscal Compliance**: Implemented Dutch BTW (VAT) handling logic (21%, 9%, 0%) with recoverable/non-recoverable tax tracking.
+*   **Banking & Payments**: Integration-ready architecture for SEPA and CAMT.053 standards (common in Dutch banking).
+*   **Technical Stack**: Laravel 11, Filament PHP (TALL Stack), MySQL, and Tailwind CSS.
 
-## Sponsorship
+---
 
-While **ERPSAAS** is open-source, maintaining it requires significant time and resources. Your sponsorship directly
-supports ongoing development, bug fixes, and improved documentation.
+## 🇳🇱 Netherlands-Specific Features
 
-As a solo developer, I can only provide limited free support. Sponsors receive priority assistance, input on feature
-priorities, and early access to updates. Even a small monthly contribution makes a significant difference in keeping
-this project actively maintained.
+### Professional Localization
+- **Dutch Language Support**: Complete translation of the UI using standard Dutch accounting terms (e.g., *Grootboekrekening*, *VOF/BV* legal structures, *Offertes*).
+- **EUR Default**: Pre-configured for Euro (€) with European number formatting (`1.234,56`).
+- **BTW Handling**: Automated tax categories for high/low/zero rates, including *Voorbelasting* (input tax) recovery logic.
 
-**Become a sponsor:** [GitHub Sponsors](https://github.com/sponsors/andrewdwallo)
+### IFRS Financial Statements
+Enhanced reporting modules to generate:
+1.  **IFRS Balance Sheet**: Explicit grouping of assets and liabilities into Current and Non-current categories.
+2.  **Multi-step Income Statement**: Clear distinction between operating and non-operating results.
+3.  **Indirect Cash Flow Statement**: Automated tracking of cash movements.
 
-# Getting started
+---
 
-## Installation
+## 🛠️ Installation & Setup
 
-Please check the official laravel installation guide for server requirements before you
-start. [Official Documentation](https://laravel.com/docs/11.x)
+### Prerequisites
+- PHP 8.2 or higher
+- Composer
+- Node.js & NPM
+- MySQL or SQLite
 
-Clone the repository
-
-    git clone https://github.com/andrewdwallo/erpsaas.git
-
-Switch to the repo folder
-
-    cd erpsaas
-
-Install all the dependencies using composer and npm
-
+### Steps
+1.  **Clone & Install**:
+    ```bash
+    git clone https://github.com/hrahm/nl-financepro.git
+    cd nl-financepro
     composer install
     npm install
-
-Copy the example env file and make the required configuration changes in the .env file
-
-    cp .env.example .env
-
-Generate a new application key
-
-    php artisan key:generate
-
-Run the database migrations (**Set the database connection in .env before migrating**)
-
-    php artisan migrate
-
-Build your assets & start the local development server
-
-    php artisan filament:assets
-    npm run build
-    npm run dev
-
-**Command list**
-
-    git clone https://github.com/andrewdwallo/erpsaas.git
-    cd erpsaas
-    composer install
-    npm install
+    ```
+2.  **Environment Setup**:
+    ```bash
     cp .env.example .env
     php artisan key:generate
+    ```
+3.  **Database & Seeders**:
+    ```bash
     php artisan migrate
-    npm run build
+    # Run the specialized Netherlands seeder
+    php artisan db:seed --class=NetherlandsAccountingSeeder
+    ```
+4.  **Run Development Server**:
+    ```bash
     npm run dev
+    php artisan serve
+    ```
 
-## Database seeding
+---
 
-**You may populate the database to help you get started quickly**
+## 📜 Attribution & License
 
-Open the DatabaseSeeder and set the property values as per your requirement
+This project is forked from the excellent [ERPSaaS](https://github.com/andrewdwallo/erpsaas) project by [Andrew Wallo](https://github.com/andrewdwallo). 
 
-    database/seeders/DatabaseSeeder.php
+- **Original Project**: [andrewdwallo/erpsaas](https://github.com/andrewdwallo/erpsaas)
+- **License**: MIT License (See [LICENSE](LICENSE) file).
 
-Default login information:
+### Modifications Made for Portfolio
+A detailed list of changes can be found in the [CHANGELOG.md](CHANGELOG.md). Major modifications include:
+- Custom report transformers for IFRS compliance.
+- Improved Dutch translation files (`nl.json`).
+- Custom `NetherlandsAccountingSeeder` for local fiscal setup.
+- Financial KPI dashboard refinements.
 
-    email: admin@erpsaas.com
-    password: password
+---
 
-Run the database seeder
+## 👨‍💼 Contact & Portfolio
 
-    php artisan db:seed
+Developed by a **General Ledger Accountant & Financial Analyst** seeking opportunities in the Netherlands.
 
-***Note***: It's recommended to have a clean database before seeding. You can reset your database to a clean state at
-any point by running the following command:
-
-    php artisan migrate:fresh
-
-## Generating PDFs for Reports
-
-To generate PDFs for reports, the application uses Laravel Snappy. The Laravel Snappy package is already included in the
-application, but you need to install Wkhtmltopdf separately.
-
-### Wkhtmltopdf Installation
-
-1. **Download and install Wkhtmltopdf**
-    - [Wkhtmltopdf Downloads](https://wkhtmltopdf.org/downloads.html)
-
-    - Alternatively, if you are using Homebrew on macOS, you can install it using the following command:
-      ```bash
-      brew install wkhtmltopdf
-      ```
-
-2. **Configure the binary paths**
-    - If needed, you can change the paths to the Wkhtmltopdf binaries in the Snappy configuration file (
-      `config/snappy.php`).
-
-For detailed installation instructions, refer to
-the [Laravel Snappy documentation](https://github.com/barryvdh/laravel-snappy).
-
-## Live Currency
-
-### Overview
-
-This application offers support for real-time currency exchange rates. This feature is disabled by default. To enable
-it, you must first register for an API key at [ExchangeRate-API](https://www.exchangerate-api.com/). The application
-uses this service due to its generous provision of up to 1,500 free API calls per month, which should be enough for
-development and testing purposes.
-
-**Disclaimer**: There is no affiliation between this application and ExchangeRate-API.
-
-Once you have your API key, you can enable the feature by setting the `CURRENCY_API_KEY` environment variable in your
-`.env` file.
-
-### Initial Setup
-
-After setting your API key in the `.env` file, it is essential to prepare your database to store the currency data.
-Start by running a fresh database migration:
-
-```bash
-php artisan migrate:fresh
-```
-
-This ensures that your database is in the correct state to store the currency information. Afterward, use the following
-command to generate and populate the Currency List with supported currencies for the Live Currency page:
-
-```bash
-php artisan currency:init
-```
-
-This command fetches and stores the list of currencies supported by your configured exchange rate service.
-
-### Configuration
-
-Of course, you may use any service you wish to retrieve currency exchange rates. If you decide to use a different
-service, you can update the `config/services.php` file with your choice:
-
-```php
-'currency_api' => [
-    'key' => env('CURRENCY_API_KEY'),
-    'base_url' => 'https://v6.exchangerate-api.com/v6',
-],
-```
-
-Then, adjust the implementation of the `App\Services\CurrencyService` class to use your chosen service.
-
-### Live Currency Page
-
-Once enabled, the "Live Currency" feature provides access to a dedicated page in the application, listing all supported
-currencies from the configured exchange rate service. Users can view available currencies and update exchange rates for
-their company's currencies as needed.
-
-### Important Information
-
-- To use the currency exchange rate feature, you must first obtain an API key from a service provider. This application
-  is configured to use a service that offers a free tier suitable for development and testing purposes.
-- Your API key is sensitive information and should be kept secret. Do not commit it to your repository or share it with
-  anyone.
-- Note that API rate limits may apply depending on the service you choose. Make sure to review the terms for your chosen
-  service.
-
-## Automatic Translation
-
-The application now supports automatic translation, leveraging machine translation services provided by AWS, as
-facilitated by the [andrewdwallo/transmatic](https://github.com/andrewdwallo/transmatic) package. This integration
-significantly enhances the application's accessibility for a global audience. The application currently offers support
-for several languages, including English, Arabic, German, Spanish, French, Indonesian, Italian, Dutch, Portuguese,
-Turkish, and Chinese, with English as the default language.
-
-### Configuration & Usage
-
-To utilize this feature for additional languages or custom translations:
-
-1. Follow the documentation provided in the [andrewdwallo/transmatic](https://github.com/andrewdwallo/transmatic)
-   package.
-2. Configure the package with your preferred translation service credentials.
-3. Run the translation commands as per the package instructions to generate new translations.
-
-Once you have configured the package, you may update the following method in the `app/Models/Setting/Localization.php`
-file to generate translations based on the selected language in the application UI:
-
-Change to the following:
-
-```php
-public static function getAllLanguages(): array
-{
-    return Languages::getNames(app()->getLocale());
-}
-```
-
-## Plaid Integration
-
-To integrate [Plaid](https://plaid.com/) with your application for enhanced financial data connectivity, you must first
-create an account with Plaid and obtain your credentials. Set your credentials in the `.env` file as follows:
-
-```env
-PLAID_CLIENT_ID=your-client-id
-PLAID_CLIENT_SECRET=your-secret
-PLAID_ENVIRONMENT=sandbox # Can be sandbox, development, or production
-PLAID_WEBHOOK_URL=https://my-static-domain.ngrok-free.app/api/plaid/webhook # Must have /api/plaid/webhook appended
-```
-
-The `PLAID_WEBHOOK_URL` is essential as it enables your application to receive real-time updates on transactions from
-connected bank accounts. This webhook URL must contain a static domain, which can be obtained from services like ngrok
-that offer a free static domain upon signup. Alternatively, you may use any other service that provides a static domain.
-
-After integrating Plaid, you can connect your account on the "Connected Accounts" page and link your financial
-institution. Before importing transactions, ensure to run the following command to process the queued transactions:
-
-```bash
-php artisan queue:listen
-```
-
-## Testing
-
-This project includes testing using [Pest](https://pestphp.com/). The current
-test suite covers some reporting features and other core functionality. While it's not yet a fully comprehensive test
-suite, it provides a foundation for testing critical features.
-
-### Setting Up the Testing Environment
-
-#### Create a testing database
-
-Ensure that you create a separate testing database named `erpsaas_test` in your database management system (e.g.,
-MySQL).
-
-```bash
-CREATE DATABASE erpsaas_test;
-```
-
-### Running Tests
-
-The testing process automatically handles refreshing and seeding the test database with each test run, so no manual
-migration is required. For more information on how to write and run tests using
-Pest, refer to the official documentation: [Pest Documentation](https://pestphp.com/docs).
-
-## Dependencies
-
-- [filamentphp/filament](https://github.com/filamentphp/filament) - A collection of beautiful full-stack components
-- [andrewdwallo/filament-companies](https://github.com/andrewdwallo/filament-companies) - A complete authentication
-  system kit based on companies built for Filament
-- [andrewdwallo/transmatic](https://github.com/andrewdwallo/transmatic) - A package for automatic translation using
-  machine translation services
-- [akaunting/laravel-money](https://github.com/akaunting/laravel-money) - Currency formatting and conversion package for
-  Laravel
-- [squirephp/squire](https://github.com/squirephp/squire) - A library of static Eloquent models for common fixture data
-- [awcodes/filament-table-repeater](https://github.com/awcodes/filament-table-repeater) - A modified version of the
-  Filament Forms Repeater to display it as a table.
-
-***Note*** : It is recommended to read the documentation for all dependencies to get yourself familiar with how the
-application works.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- **LinkedIn**: [Your Profile Link]
+- **Technical Skills**: Financial Reporting (IFRS/Dutch GAAP), Laravel, SQL, Audit Compliance.
+- **Accounting Expertise**: Month-end closing, VAT filings (BTW), Financial Statement Analysis, ERP Implementation.

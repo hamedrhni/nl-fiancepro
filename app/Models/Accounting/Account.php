@@ -4,6 +4,7 @@ namespace App\Models\Accounting;
 
 use App\Concerns\Blamable;
 use App\Concerns\CompanyOwned;
+use App\Concerns\InteractsWithAuditTrail;
 use App\Enums\Accounting\AccountCategory;
 use App\Enums\Accounting\AccountType;
 use App\Facades\Accounting;
@@ -30,6 +31,7 @@ class Account extends Model
     use Blamable;
     use CompanyOwned;
     use HasFactory;
+    use InteractsWithAuditTrail;
 
     protected $table = 'accounts';
 

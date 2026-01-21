@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "andrewdwallo/erpsaas",
+    "name": "hrahm/nl-financepro",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
@@ -85,7 +85,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "barryvdh/laravel-debugbar"
+            ]
         }
     },
     "config": {

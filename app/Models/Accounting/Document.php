@@ -4,6 +4,7 @@ namespace App\Models\Accounting;
 
 use App\Concerns\Blamable;
 use App\Concerns\CompanyOwned;
+use App\Concerns\InteractsWithAuditTrail;
 use App\Enums\Accounting\DocumentType;
 use App\Models\Setting\Currency;
 use Filament\Actions\Action;
@@ -19,6 +20,7 @@ abstract class Document extends Model
     use Blamable;
     use CompanyOwned;
     use HasFactory;
+    use InteractsWithAuditTrail;
 
     public function currency(): BelongsTo
     {

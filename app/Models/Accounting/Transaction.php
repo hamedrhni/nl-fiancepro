@@ -4,6 +4,7 @@ namespace App\Models\Accounting;
 
 use App\Concerns\Blamable;
 use App\Concerns\CompanyOwned;
+use App\Concerns\InteractsWithAuditTrail;
 use App\Enums\Accounting\AccountCategory;
 use App\Enums\Accounting\AccountType;
 use App\Enums\Accounting\PaymentMethod;
@@ -33,6 +34,7 @@ class Transaction extends Model
     use Blamable;
     use CompanyOwned;
     use HasFactory;
+    use InteractsWithAuditTrail;
 
     protected $fillable = [
         'company_id',
