@@ -89,6 +89,6 @@ A detailed list of changes can be found in the [CHANGELOG.md](CHANGELOG.md). Maj
 
 Developed by a **General Ledger Accountant & Financial Analyst** seeking opportunities in the Netherlands.
 
-- **LinkedIn**: [Your Profile Link]
+- **LinkedIn**: [[Your Profile Link](https://www.linkedin.com/in/hamerhn)]
 - **Technical Skills**: Financial Reporting (IFRS/Dutch GAAP), Laravel, SQL, Audit Compliance.
 - **Accounting Expertise**: Month-end closing, VAT filings (BTW), Financial Statement Analysis, ERP Implementation.
